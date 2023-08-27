@@ -2,15 +2,17 @@ import { Navigation } from "components/Navigation/Navigation"
 import { UserMenu } from "components/UserMenu/UserMenu"
 import { AuthNav } from "components/AuthNav/AuthNav"
 import css from './Header.module.css'
+import { selectIsLoggedIn } from "redux/auth/selectors"
+import { useSelector } from "react-redux"
 
 export const Header = () => {
+  const isLoggedIn = useSelector(selectIsLoggedIn)
     return (
       <header className={css.header}>
-        
-          <Navigation />
-          <UserMenu />
-          <AuthNav />
-        
+        <Navigation />
+        {isLoggedIn ? <UserMenu /> : <AuthNav />}
       </header>
     );
 }
+
+
