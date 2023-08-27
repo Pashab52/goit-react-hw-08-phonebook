@@ -1,4 +1,4 @@
-/* .phoneContainer{
+.phoneContainer{
     background-color: lightsteelblue;
     max-width: 560px;
     max-height: 660px;
@@ -14,7 +14,7 @@
     border-radius: 20px;
     padding: 30px 40px 35px 40px;
     box-shadow: 0 8px 26px rgba(0, 0, 0, 0.4), 0 28px 30px rgba(0, 0, 0, 0.3);
-} */
+}
 
 .title{
     font-weight: 900;

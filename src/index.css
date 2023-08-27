@@ -52,3 +52,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.homeWrap{
+  background-image: url('./img/phonebook7.png');
+  background-image: url('./img/phonebook6.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  height: 500px;
+}

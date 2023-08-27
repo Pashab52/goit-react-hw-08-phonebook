@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom';
 import { Header } from './Header/Header';
 import { Suspense } from 'react';
 import { Loader } from './Loader/Loader';
+import css from './Layout.module.css'
 
 
 const Layout = () => {
@@ -11,9 +12,11 @@ const Layout = () => {
         <Header />
       </header>
       <main>
-        <Suspense fallback={<Loader />}>
-          <Outlet />
-        </Suspense>
+        <div className={css.phoneContainer}>
+          <Suspense fallback={<Loader />}>
+            <Outlet />
+          </Suspense>
+        </div>
       </main>
       <footer>
         <div className="footer"></div>

@@ -1,8 +1,8 @@
 
 // import PropTypes from 'prop-types';
 import css from './Filter.module.css';
-import { selectFilter } from 'redux/selectors';
-import { setFilter } from 'redux/contactsSlice';
+import { selectFilter } from 'redux/contacts/selectors';
+import { setFilter } from 'redux/contacts/contactsSlice';
 import { useSelector, useDispatch} from 'react-redux';
 
   

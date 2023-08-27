@@ -1,14 +1,8 @@
-// import { ContactForm } from "./ContactForm/ContactForm";
-// import { ContactList } from "./ContactList/ContactList";
-// import { Filter } from "./Filter/Filter";
-// import { Loader } from "./Loader/Loader";
 // import css from './App.module.css'
-// import { useDispatch, useSelector } from 'react-redux';
-
-// import { selectError, selectIsLoading } from "redux/selectors";
-// import { useEffect } from "react";
-// import { fetchContacts } from "redux/operations";
-
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from "react";
+import { selectIsRefreshing } from 'redux/auth/selectors';
+import { refreshUser } from 'redux/auth/operations';
 import { Route, Routes } from 'react-router-dom';
 import { lazy } from 'react';
 import Layout from './Layout';
@@ -20,22 +14,17 @@ const Contacts = lazy(() => import('../pages/Contacts'));
 
 export function App() {
 
+ const dispatch = useDispatch();
+ const  isRefreshing = useSelector(selectIsRefreshing);
 
-  //  const isLoading = useSelector(selectIsLoading);
-  //  const error = useSelector(selectError);
-  // const dispatch = useDispatch()
-
-
-
-  
-  // useEffect(() => {
-
-  //   dispatch(fetchContacts());
-
-  // }, [dispatch]);
+ useEffect(() => {
+   dispatch(refreshUser());
+ }, [dispatch]);
  
 
-  return (
+  return isRefreshing ? (
+    <p>Refreshing user...</p>
+  ) : (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home/>} />
@@ -59,20 +48,5 @@ export function App() {
         />
       </Route>
     </Routes>
-
-    // <div className={css.phoneContainer}>
-    //   <h1 className={css.title}>Phonebook</h1>
-    //   <ContactForm />
-
-    //   <Filter />
-
-    //   <div className={css.contactsTitleWrap}>
-    //     <h2 className={css.contactsTitle}>Contacts</h2>
-    //     {isLoading &&  <Loader/>}
-    //   </div>
-    //   {error && <p>Contacts not found</p>}
-
-    //   <ContactList />
-    // </div>
   );
 };
