@@ -27,14 +27,17 @@ overflow-x: auto;
 }
 
 
+.contIcon{
+    margin-right: 5px;
+}
 
-
-li p {
+.contText {
+    display: flex;
     padding-top: 3px;
     padding-left: 2px;
     border: 3px double white;
     width: 100%;
-    margin-right: 5px;
+ 
     text-align: start;
     border-radius: 2px;
     background-color: #f0f0f0;
@@ -45,6 +48,12 @@ li p {
     
 }
 
+.contText:first-child {
+    margin-right: 1px;
+}
+
+
+
 button {
     padding: 3px 6px;
     border-radius: 2px;
@@ -53,7 +62,6 @@ button {
     /* box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1); */
     transition: border-radius 200ms linear, box-shadow 50ms linear;
     /* margin-right: 5px; */
-
 }
 
 button:hover {
@@ -62,7 +70,13 @@ button:hover {
 
 }
 
-li button:hover {
+.contBtn{
+    margin-left: 5px;
+}
+
+.contBtn:hover {
     border-radius: 50%;
     box-shadow: none
 }
+
+
