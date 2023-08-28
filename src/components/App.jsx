@@ -6,11 +6,13 @@ import { refreshUser } from 'redux/auth/operations';
 import { Route, Routes } from 'react-router-dom';
 import { lazy } from 'react';
 import Layout from './Layout';
-
+import { PrivateRoute } from './PrivateRoute';
+import { RestrictedRoute } from './RestrictedRoute';
 const Home = lazy(() => import('../pages/Home'));
 const Login = lazy(() => import('../pages/Login'));
 const Register = lazy(() => import('../pages/Register'));
 const Contacts = lazy(() => import('../pages/Contacts'));
+const Calendar = lazy(() => import('../pages/Calendar'));
 
 export function App() {
 
@@ -27,23 +29,29 @@ export function App() {
   ) : (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<Home/>} />
+        <Route index element={<Home />} />
+        <Route
+            path="/calendar"
+            element={
+              <Calendar />} />
+          
+        
         <Route
           path="/register"
           element={
-           <Register />
+            <RestrictedRoute redirectTo="/contacts" component={<Register />} />
           }
         />
         <Route
           path="/login"
           element={
-            <Login />
+            <RestrictedRoute redirectTo="/contacts" component={<Login />} />
           }
         />
         <Route
           path="/contacts"
           element={
-           <Contacts />
+            <PrivateRoute redirectTo="/login" component={<Contacts />} />
           }
         />
       </Route>
