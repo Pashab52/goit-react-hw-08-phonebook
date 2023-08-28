@@ -11,17 +11,6 @@ export function ContactList() {
 
 
 
-//   function filterContacts() {
-//     const normalizedFilter = filterData.toLowerCase();
-//     return contacts.filter(contact =>
-//       contact.name.toLowerCase().includes(normalizedFilter)
-//     );
-//   }
-// const filterContactsData = filterContacts();
-
- 
-
-
     return (
       <ul className={CSS.contctList}>
         {filterContactsData.map(contact => {

@@ -12,7 +12,7 @@ const initialState = {
 const authSlice = createSlice({
   name: 'auth',
   initialState,
-  extraReducers: {
+  extraReducers:  {
     [register.rejected](state, action) {
       state.error = action.payload;
     },
