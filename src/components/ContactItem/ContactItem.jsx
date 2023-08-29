@@ -2,7 +2,8 @@ import PropTypes from 'prop-types';
 import css from './ContactItem.module.css'
 import { useDispatch} from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations'; 
-import { BiUser, BiSolidPhone, BiX } from 'react-icons/bi';
+import { BiUser, BiSolidPhone } from 'react-icons/bi';
+import { FaTimes, FaPen } from 'react-icons/fa';
 
 
 
@@ -22,12 +23,25 @@ export function ContactItem (props) {
           <p>{props.number}</p>
         </div>
         <button
+          className={css.contBtnEdit}
+          type="button"
+          data-id={props.id}
+          onClick={() => dispatch(deleteContact(props.id))}
+        >
+          <FaPen
+            style={{
+              width: '26',
+                   
+            }}
+          />
+        </button>
+        <button
           className={css.contBtn}
           type="button"
           data-id={props.id}
           onClick={() => dispatch(deleteContact(props.id))}
         >
-          <BiX size={18} />
+          <FaTimes size={18} />
         </button>
       </li>
     );

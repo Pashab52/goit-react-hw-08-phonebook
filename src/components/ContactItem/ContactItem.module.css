@@ -60,9 +60,8 @@ button {
     border: 3px double white;
     font-weight: 600;
     /* box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1); */
-    transition: border-radius 200ms linear, box-shadow 50ms linear;
-    /* margin-right: 5px; */
-}
+     transition: border-radius 200ms linear, box-shadow 50ms linear;
+}  
 
 button:hover {
     box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
@@ -72,6 +71,10 @@ button:hover {
 
 .contBtn{
     margin-left: 5px;
+    padding: 0 6px;
+        border-radius: 2px;
+        border: 3px double white;
+        font-weight: 600;
 }
 
 .contBtn:hover {
@@ -79,4 +82,8 @@ button:hover {
     box-shadow: none
 }
 
-
+.contBtnEdit{
+    composes: contBtn;
+    padding: 0 4px;
+       
+}
