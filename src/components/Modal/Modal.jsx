@@ -1,6 +1,7 @@
 import { createPortal } from 'react-dom';
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import css from './Modal.module.css'
 
 export function Modal (props) {
 
@@ -32,7 +33,7 @@ export function Modal (props) {
 
     return createPortal(
       <div className="overlay" onClick={handleOverlayClick}>
-        <div>{props.children}</div>
+        <div className={css.modal}>{props.children}</div>
       </div>,
       modalRoot
     );

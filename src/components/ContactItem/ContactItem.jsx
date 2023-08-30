@@ -26,7 +26,9 @@ export function ContactItem (props) {
           className={css.contBtnEdit}
           type="button"
           data-id={props.id}
-          onClick={() => dispatch(deleteContact(props.id))}
+          onClick={() => 
+            props.onEditBtnClick()
+          }
         >
           <FaPen
             style={{

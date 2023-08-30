@@ -1,11 +1,15 @@
 import { Outlet } from 'react-router-dom';
 import { Header } from './Header/Header';
-import { Suspense } from 'react';
+import { Suspense} from 'react';
 import { Loader } from './Loader/Loader';
 import css from './Layout.module.css'
 
 
+
 const Layout = () => {
+
+
+  
   return (
     <>
       <header className="header">
@@ -21,6 +25,7 @@ const Layout = () => {
       <footer>
         <div className="footer"></div>
       </footer>
+      
     </>
   );
 };
