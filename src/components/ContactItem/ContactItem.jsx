@@ -10,7 +10,7 @@ import { FaTimes, FaPen } from 'react-icons/fa';
 export function ContactItem (props) {
   const dispatch = useDispatch();
 
-  
+ 
   
     return (
       <li className={css.contactItem}>
@@ -25,22 +25,17 @@ export function ContactItem (props) {
         <button
           className={css.contBtnEdit}
           type="button"
-          data-id={props.id}
-          onClick={() => 
-            props.onEditBtnClick()
-          }
+          onClick={() => props.onEditBtnClick(props.contact)}
         >
           <FaPen
             style={{
               width: '26',
-                   
             }}
           />
         </button>
         <button
           className={css.contBtn}
           type="button"
-          data-id={props.id}
           onClick={() => dispatch(deleteContact(props.id))}
         >
           <FaTimes size={18} />

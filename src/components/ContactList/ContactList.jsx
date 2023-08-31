@@ -17,6 +17,7 @@ export function ContactList({ onEditBtnClick }) {
             number={contact.number}
             key={contact.id}
             id={contact.id}
+            contact={contact}
             onEditBtnClick={onEditBtnClick}
           />
         );

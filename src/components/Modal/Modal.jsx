@@ -32,7 +32,7 @@ export function Modal (props) {
   const modalRoot = document.querySelector('#modal-root');
 
     return createPortal(
-      <div className="overlay" onClick={handleOverlayClick}>
+      <div className={css.overlay} onClick={handleOverlayClick}>
         <div className={css.modal}>{props.children}</div>
       </div>,
       modalRoot

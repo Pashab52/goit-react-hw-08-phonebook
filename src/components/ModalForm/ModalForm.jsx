@@ -1,17 +1,20 @@
 import { useState } from 'react';
+import css from './ModalForm.module.css'
 // import css from './ContactForm.module.css';
 
-// import { useDispatch, useSelector } from 'react-redux';
-// import { addContact } from 'redux/contacts/operations';
-// import { selectContacts } from 'redux/contacts/selectors';
+import { useDispatch, useSelector } from 'react-redux';
+import { editContact } from 'redux/contacts/operations';
+import { selectContacts } from 'redux/contacts/selectors';
 
 
-export function ModalForm() {
-  const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+export function ModalForm(props) {
+  const [name, setName] = useState(props.contact.name);
+  const [number, setNumber] = useState(props.contact.number);
+  const id = props.contact.id;
 
-//   const dispatch = useDispatch();
-//   const contacts = useSelector(selectContacts);
+
+  const dispatch = useDispatch();
+  const contacts = useSelector(selectContacts);
 
   const handleInputChange = event => {
     switch (event.currentTarget.name) {
@@ -28,33 +31,33 @@ export function ModalForm() {
     }
   };
 
-//   const handleFormSubmit = event => {
-//     event.preventDefault();
-//     const identicalContact = contacts.some(contact => contact.name === name);
+  const handleFormSubmit = event => {
+    event.preventDefault();
+    const identicalContact = contacts.some(contact => contact.name === name);
 
-//     identicalContact
-//       ? alert(`${name} is already in contacts`)
-//       : onNoIdenticalContact();
-//   };
+    identicalContact && props.contact.number === number
+      ? alert(`${name} is already in contacts`)
+      : onNoIdenticalContact();
+  };
 
-//   function onNoIdenticalContact() {
-//     dispatch(addContact({ name, number }));
+  function onNoIdenticalContact() {
+    dispatch(editContact({ id, name, number }));
+    props.onModalClose()
+    reset();
+  }
 
-//     reset();
-//   }
-
-//   const reset = () => {
-//     setName('');
-//     setNumber('');
-//   };
+  const reset = () => {
+    setName('');
+    setNumber('');
+  };
 
   return (
-    // <form className={css.contactForm} >
-    <form  >
-    {/* <form className={css.contactForm} onSubmit={handleFormSubmit}> */}
-      <label>
+    <form className={css.modalForm} onSubmit={handleFormSubmit}>
+      <h2 className={css.modalTitle}>Edit contact</h2>
+          <label className={css.modalLabel}>
         Name <br />
         <input
+          className={css.modalInput}
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -80,7 +83,7 @@ export function ModalForm() {
         />
       </label>
 
-      <button type="submit">Add contact</button>
+      <button type="submit">Save</button>
     </form>
   );
 }

@@ -1,5 +1,5 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
-import { fetchContacts, addContact, deleteContact } from './operations';
+import { fetchContacts, addContact, deleteContact, editContact } from './operations';
 
 const phonebookInitialState = {
   contacts: {
@@ -45,7 +45,6 @@ const contactsSlice = createSlice({
       .addCase(fetchContacts.fulfilled, (state, action) => {
         handleFulfilled(state);
 
-
         state.contacts.items = [...action.payload];
       })
       // .addCase(fetchContacts.rejected, handleRejected)
@@ -66,6 +65,14 @@ const contactsSlice = createSlice({
         state.contacts.items.splice(index, 1);
       })
       // .addCase(deleteContact.rejected, handleRejected)
+      .addCase(editContact.fulfilled, (state, action) => {
+        handleFulfilled(state);
+        const index = state.contacts.items.findIndex(
+          contact => contact.id === action.payload.id
+        );
+        state.contacts.items[index].name = action.payload.name
+        state.contacts.items[index].number = action.payload.number;
+      })
 
       .addMatcher(
         isAnyOf(

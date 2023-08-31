@@ -17,7 +17,7 @@ const Contacts = () => {
   const error = useSelector(selectError);
 
 const [showModal, setShowModal] = useState(false);
-
+const [editContact, setEditContact] = useState({});
 
 
   const dispatch = useDispatch()
@@ -29,10 +29,13 @@ const [showModal, setShowModal] = useState(false);
   }, [dispatch]);
 
 
-   const handleEditClick = () => {
+  const handleEditClick = (contact) => {
+      setEditContact(contact);
       setShowModal(true);
    };
 
+
+  
   const closeModal = () => {
     setShowModal(false);
   };
@@ -54,7 +57,11 @@ const [showModal, setShowModal] = useState(false);
 
       <ContactList onEditBtnClick={handleEditClick} />
 
-      {showModal && <Modal  onModalClose={closeModal}><ModalForm/> </Modal>}
+      {showModal && (
+        <Modal onModalClose={closeModal}>
+          <ModalForm contact={editContact} onModalClose={closeModal} />
+        </Modal>
+      )}
     </>
   );
 };
