@@ -38,7 +38,11 @@ export function ContactItem (props) {
           type="button"
           onClick={() => dispatch(deleteContact(props.id))}
         >
-          <FaTimes size={18} />
+          <FaTimes
+            style={{
+              width: '26',
+            }}
+          />
         </button>
       </li>
     );

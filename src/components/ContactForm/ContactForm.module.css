@@ -23,16 +23,31 @@ input{
     outline: none;
     /* box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1); */
 
+
 }
 
 input:hover{
-outline:1px solid gray;
+/* outline:1px solid gray; */
 }
 
 input:focus {
-    outline: 1px solid gray;
+    /* outline: 1px solid gray; */
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 0px 0px 1px rgba(255, 255, 255, 1);
+    background-color: white;
 }
 
 
 
+.contactBtn {
+    padding: 3px 6px;
+    border-radius: 2px;
+    border: 3px double white;
+    font-weight: 600;
+    /* box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1); */
+    transition: border-radius 200ms linear, box-shadow 50ms linear;
+}
+.contactBtn:hover {
+    box-shadow: inset 2px 2px 0px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
 
+
+}

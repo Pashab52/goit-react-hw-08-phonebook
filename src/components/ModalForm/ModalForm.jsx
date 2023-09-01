@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import css from './ModalForm.module.css'
-// import css from './ContactForm.module.css';
+import { FaTimes } from 'react-icons/fa';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { editContact } from 'redux/contacts/operations';
@@ -53,8 +53,11 @@ export function ModalForm(props) {
 
   return (
     <form className={css.modalForm} onSubmit={handleFormSubmit}>
+      <button className={css.modalCloseBtn} type="button">
+        <FaTimes size={14}/>
+      </button>
       <h2 className={css.modalTitle}>Edit contact</h2>
-          <label className={css.modalLabel}>
+      <label className={css.modalLabel}>
         Name <br />
         <input
           className={css.modalInput}

@@ -39,3 +39,20 @@
     font-size: 18px;
     text-align: center;
 }
+
+.modalCloseBtn{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+ 
+    padding: 3px 3px;
+    border-radius: 2px;
+    border: 3px double white;
+    transition: border-radius 200ms linear;
+ 
+      
+}
+.modalCloseBtn:hover {
+      border-radius: 50%;
+      box-shadow: none
+  }
