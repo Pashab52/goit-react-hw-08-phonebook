@@ -19,6 +19,7 @@ const filterData = useSelector(selectFilter);
         <label>
           Find contacts by name <br />
           <input
+            className={css.filterInput}
             type="text"
             name="name"
             value={filterData}

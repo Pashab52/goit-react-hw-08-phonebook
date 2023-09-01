@@ -57,10 +57,15 @@ export function ContactForm() {
 
  
     return (
-      <form className={css.contactForm} onSubmit={handleFormSubmit} autoComplete="off">
+      <form
+        className={css.contactForm}
+        onSubmit={handleFormSubmit}
+        autoComplete="off"
+      >
         <label>
           Name <br />
           <input
+            className={css.contactInput}
             type="text"
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -75,6 +80,7 @@ export function ContactForm() {
         <label>
           Number <br />
           <input
+            className={css.contactInput}
             type="tel"
             name="number"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"

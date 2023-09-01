@@ -53,8 +53,12 @@ export function ModalForm(props) {
 
   return (
     <form className={css.modalForm} onSubmit={handleFormSubmit}>
-      <button className={css.modalCloseBtn} type="button">
-        <FaTimes size={14}/>
+      <button
+        className={css.modalCloseBtn}
+        type="button"
+        onClick={props.onModalClose}
+      >
+        <FaTimes size={14} />
       </button>
       <h2 className={css.modalTitle}>Edit contact</h2>
       <label className={css.modalLabel}>
@@ -75,6 +79,7 @@ export function ModalForm(props) {
       <label>
         Number <br />
         <input
+          className={css.modalInput}
           type="tel"
           name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
