@@ -17,7 +17,7 @@ const Layout = () => {
       </header>
       <main>
         <div className={css.phoneContainer}>
-          <Suspense fallback={<Loader />}>
+          <Suspense fallback={<Loader/>}>
             <Outlet />
           </Suspense>
         </div>

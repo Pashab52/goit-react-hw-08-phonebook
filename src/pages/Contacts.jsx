@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet';
-import css from './Contacts.module.css'
+import css from './Contacts.module.css';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
@@ -11,31 +11,24 @@ import { fetchContacts } from 'redux/contacts/operations';
 import { Modal } from 'components/Modal/Modal';
 import { ModalForm } from 'components/ModalForm/ModalForm';
 
-
 const Contacts = () => {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
-const [showModal, setShowModal] = useState(false);
-const [editContact, setEditContact] = useState({});
+  const [showModal, setShowModal] = useState(false);
+  const [editContact, setEditContact] = useState({});
 
-
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
-
     dispatch(fetchContacts());
-
   }, [dispatch]);
 
+  const handleEditClick = contact => {
+    setEditContact(contact);
+    setShowModal(true);
+  };
 
-  const handleEditClick = (contact) => {
-      setEditContact(contact);
-      setShowModal(true);
-   };
-
-
-  
   const closeModal = () => {
     setShowModal(false);
   };
@@ -47,16 +40,12 @@ const [editContact, setEditContact] = useState({});
       </Helmet>
       <ContactForm />
       <Filter />
-
       <div className={css.contactsTitleWrap}>
         <h2 className={css.contactsTitle}>Contacts</h2>
-        {isLoading && <Loader />}
       </div>
-
+      {isLoading && <Loader />}
       {error && <p>Contacts not found</p>}
-
       <ContactList onEditBtnClick={handleEditClick} />
-
       {showModal && (
         <Modal onModalClose={closeModal}>
           <ModalForm contact={editContact} onModalClose={closeModal} />
@@ -67,4 +56,3 @@ const [editContact, setEditContact] = useState({});
 };
 
 export default Contacts;
-

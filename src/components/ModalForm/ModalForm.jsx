@@ -91,7 +91,7 @@ export function ModalForm(props) {
         />
       </label>
 
-      <button type="submit">Save</button>
+      <button className={css.modalSubmitBtn} type="submit">Save</button>
     </form>
   );
 }

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from "redux/contacts/operations";  
 import { selectContacts } from "redux/contacts/selectors";
 // import { fetchContacts } from "redux/operations";
+import { BsPersonFillAdd } from 'react-icons/bs';
 
 
 export function ContactForm() {
@@ -62,8 +63,10 @@ export function ContactForm() {
         onSubmit={handleFormSubmit}
         autoComplete="off"
       >
+        <h2 className={css.contactFormTitle}>Add contact</h2>
+
         <label>
-          Name <br />
+          <p className={css.contactInputTxt}>Name</p>
           <input
             className={css.contactInput}
             type="text"
@@ -78,7 +81,7 @@ export function ContactForm() {
         </label>
 
         <label>
-          Number <br />
+          <p className={css.contactInputTxt}>Number</p>
           <input
             className={css.contactInput}
             type="tel"
@@ -93,7 +96,7 @@ export function ContactForm() {
         </label>
 
         <button className={css.contactBtn} type="submit">
-          Add contact
+          <BsPersonFillAdd size={22}/>
         </button>
       </form>
     );

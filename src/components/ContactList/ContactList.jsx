@@ -8,7 +8,7 @@ import {
 export function ContactList({ onEditBtnClick }) {
   const filterContactsData = useSelector(selectFilterContacts);
 
-  return (
+  return filterContactsData.length ? (
     <ul className={CSS.contctList}>
       {filterContactsData.map(contact => {
         return (
@@ -23,6 +23,8 @@ export function ContactList({ onEditBtnClick }) {
         );
       })}
     </ul>
+  ) : (
+    <p>There are no contacts in your phonebook</p>
   );
 }
 
