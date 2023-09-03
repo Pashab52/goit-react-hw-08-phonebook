@@ -70,7 +70,7 @@ const contactsSlice = createSlice({
         const index = state.contacts.items.findIndex(
           contact => contact.id === action.payload.id
         );
-        state.contacts.items[index].name = action.payload.name
+        state.contacts.items[index].name = action.payload.name;
         state.contacts.items[index].number = action.payload.number;
       })
 
@@ -78,7 +78,8 @@ const contactsSlice = createSlice({
         isAnyOf(
           fetchContacts.pending,
           addContact.pending,
-          deleteContact.pending
+          deleteContact.pending,
+          editContact.pending
         ),
         handlePending
       )
@@ -86,7 +87,8 @@ const contactsSlice = createSlice({
         isAnyOf(
           fetchContacts.rejected,
           addContact.rejected,
-          deleteContact.rejected
+          deleteContact.rejected,
+          editContact.rejected
         ),
         handleRejected
       );
