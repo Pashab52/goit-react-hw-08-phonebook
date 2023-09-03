@@ -13,6 +13,8 @@ const Login = lazy(() => import('../pages/Login'));
 const Register = lazy(() => import('../pages/Register'));
 const Contacts = lazy(() => import('../pages/Contacts'));
 const Calendar = lazy(() => import('../pages/Calendar'));
+const Tasks = lazy(() => import('../pages/Tasks'));
+const Map = lazy(() => import('../pages/Map'));
 
 export function App() {
 
@@ -30,12 +32,9 @@ export function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route
-            path="/calendar"
-            element={
-              <Calendar />} />
-          
-        
+        <Route path="/calendar" element={<Calendar />} />
+        <Route path="/map" element={<Map />} />
+
         <Route
           path="/register"
           element={
@@ -53,6 +52,10 @@ export function App() {
           element={
             <PrivateRoute redirectTo="/login" component={<Contacts />} />
           }
+        />
+        <Route
+          path="/tasks"
+          element={<PrivateRoute redirectTo="/login" component={<Tasks />} />}
         />
       </Route>
     </Routes>

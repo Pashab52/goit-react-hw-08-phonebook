@@ -59,10 +59,24 @@ code {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-
   height: 500px;
 }
 
+.homeTitle{
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 36px;
+}
 
 
+.active {
+  color: white;
+  text-decoration: underline solid white;
+  text-underline-offset: 5px;
 
+}
+
+.mapWrap.{
+  overflow: hidden;
+  padding-top: -41px;
+}

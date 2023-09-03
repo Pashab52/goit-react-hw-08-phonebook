@@ -1,11 +1,19 @@
-.link {
+.headerLink {
   display: inline-block;
-  text-decoration: none;
-  padding: 12px;
+  /* text-decoration: none; */
+  /* padding: 12px; */
   font-weight: 700;
-  color: #2a363b;
+    text-decoration: none;
+      text-underline-offset: 5px;
 }
 
-.link.active {
-  color: #e84a5f;
+.headerLink:hover{
+    text-decoration: underline solid white;
+    text-underline-offset: 5px;
+}
+
+.headerNav{
+  display: flex;
+  gap: 15px
+  ;
 }

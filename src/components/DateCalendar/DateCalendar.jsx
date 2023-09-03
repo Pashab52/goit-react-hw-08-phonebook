@@ -7,17 +7,19 @@ import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 import css from './DateCalendar.module.css'
 
 export default function DateCalendarFormProps() {
-       return (
-         <div className={css.calendarWrap}>
-           <LocalizationProvider dateAdapter={AdapterDayjs}>
-             <DemoContainer components={['DateCalendar', 'DateCalendar']}
-             >
-               <DemoItem>
-                 <DateCalendar defaultValue={dayjs(new Date())} readOnly />
-               </DemoItem>
-             </DemoContainer>
-           </LocalizationProvider>
-         </div>
-       );
+  return (
+    <>
+      <h2 className={css.calendarTitle}>Calendar</h2>
+      <div className={css.calendarWrap}>
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <DemoContainer components={['DateCalendar', 'DateCalendar']}>
+            <DemoItem>
+              <DateCalendar defaultValue={dayjs(new Date())} readOnly />
+            </DemoItem>
+          </DemoContainer>
+        </LocalizationProvider>
+      </div>
+    </>
+  );
      }
     

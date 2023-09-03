@@ -9,9 +9,9 @@ const Calendar = () => {
   return (
     <div>
       <Helmet>
-        <title>Date Calendar</title>
+        <title>Calendar</title>
       </Helmet>
-      <h2>Date Calendar</h2>
+      
       {DateCalendarFormProps()}
     </div>
   );

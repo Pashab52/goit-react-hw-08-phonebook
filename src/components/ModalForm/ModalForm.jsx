@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import css from './ModalForm.module.css'
-import { FaTimes } from 'react-icons/fa';
-
+import { FaTimes, FaRegSave } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { editContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
@@ -91,7 +90,7 @@ export function ModalForm(props) {
         />
       </label>
 
-      <button className={css.modalSubmitBtn} type="submit">Save</button>
+      <button className={css.modalSubmitBtn} type="submit"><FaRegSave size={22}/></button>
     </form>
   );
 }

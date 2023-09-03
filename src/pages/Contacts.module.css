@@ -16,7 +16,7 @@
     box-shadow: 0 8px 26px rgba(0, 0, 0, 0.4), 0 28px 30px rgba(0, 0, 0, 0.3);
 } */
 
-.title{
+/* .title{
     font-weight: 900;
     font-size: 30px;
     margin-bottom: 5px;
@@ -25,7 +25,7 @@
     1px 1px 1px silver,
         -1px 1px 1px silver;   
        
-}
+} */
 
 
 
@@ -37,5 +37,7 @@ width: 130px;
 }
 .contactsTitle{
     text-align: center;
+    
+    
 }
 

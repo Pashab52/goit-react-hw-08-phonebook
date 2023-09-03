@@ -8,18 +8,27 @@ export const Navigation = () => {
   const isLogIn = useSelector(selectIsLoggedIn)
 
   return (
-    <nav>
-       <NavLink className={css.link} to="/">
+    <nav className={css.headerNav}>
+      <NavLink className={css.headerLink} to="/">
         Home
       </NavLink>
-   
-      {isLogIn && <NavLink className={css.link} to="/contacts">
-        Contacts
-      </NavLink>}
 
-    
-       <NavLink className={css.link} to="/calendar">
-        Date Calendar
+      {isLogIn && (
+        <NavLink className={css.headerLink} to="/contacts">
+          Contacts
+        </NavLink>
+      )}
+      {isLogIn && (
+        <NavLink className={css.headerLink} to="/tasks">
+          Tasks
+        </NavLink>
+      )}
+
+      <NavLink className={css.headerLink} to="/calendar">
+        Calendar
+      </NavLink>
+      <NavLink className={css.headerLink} to="/map">
+       Map
       </NavLink>
     </nav>
   );

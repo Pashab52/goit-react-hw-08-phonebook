@@ -15,10 +15,10 @@ const filterData = useSelector(selectFilter);
   }
  
     return (
-      <div className={css.filter}>
+      <div className={css.filterWrap}>
         <label>
-          Find contacts by name <br />
-          <input
+          <p className={css.filter}>Find contacts by name</p>
+            <input
             className={css.filterInput}
             type="text"
             name="name"

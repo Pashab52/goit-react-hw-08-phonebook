@@ -36,14 +36,14 @@ const Contacts = () => {
   return (
     <>
       <Helmet>
-        <title>Your tasks</title>
+        <title>Contacts</title>
       </Helmet>
       <ContactForm />
       <Filter />
       <div className={css.contactsTitleWrap}>
         <h2 className={css.contactsTitle}>Contacts</h2>
-      </div>
       {isLoading && <Loader />}
+      </div>
       {error && <p>Contacts not found</p>}
       <ContactList onEditBtnClick={handleEditClick} />
       {showModal && (

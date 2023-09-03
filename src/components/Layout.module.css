@@ -1,20 +1,43 @@
 .phoneContainer{
+    /* top: 142px;
+    left: 565px; */
     background-color: lightsteelblue;
-    max-width: 560px;
-    max-height: 660px;
-    margin-top: 100px;
+    width: 563px;
+    height: 740px;
+    /* margin-top: 100px; */
     margin-left: auto;
     margin-right: auto;
     display: flex;
     gap: 10px;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     color: #010101;
-    border-radius: 20px;
-    padding: 30px 40px 35px 40px;
-    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.4), 0 28px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+    /* padding: 30px 40px 35px 40px; */
+    padding: 41px 10px 5px 10px;
+    /* box-shadow: 0 8px 26px rgba(0, 0, 0, 0.4), 0 28px 30px rgba(0, 0, 0, 0.3); */
 }
+.background {
+    position: relative;
+    padding-top: 91px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 720px;
+    height: 920px;
+    background-image: url('../img/tab.png');
+    background-repeat: no-repeat;
+    /* background-size: 45%; */
+    /* background-position: 480px 50px;
+    height: 100vh; */
+    /* background-attachment: fixed; */
+    background-size: 720px 920px;
+    /* 
+    width: 395px;
+    height: 505px; */
+}
+
+
 
 .title{
     font-weight: 900;
@@ -38,3 +61,24 @@ width: 130px;
 .contactsTitle{
     text-align: center;
 }
+
+.bgBtn{
+    position: absolute;
+    left: 340px;
+    top: 857px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid transparent;
+
+    color: #ffffff;
+
+}
+
+
+.bgBtn:hover{
+    background-color: rgba(63, 81, 181, 0.3);
+   
+}
+

@@ -8,10 +8,10 @@ import { useSelector } from "react-redux"
 export const Header = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn)
     return (
-      <header className={css.header}>
+      <div className={css.header}>
         <Navigation />
         {isLoggedIn ? <UserMenu /> : <AuthNav />}
-      </header>
+      </div>
     );
 }
 
