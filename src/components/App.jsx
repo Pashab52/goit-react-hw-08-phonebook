@@ -38,13 +38,13 @@ export function App() {
         <Route
           path="/register"
           element={
-            <RestrictedRoute redirectTo="/contacts" component={<Register />} />
+            <RestrictedRoute redirectTo="/" component={<Register />} />
           }
         />
         <Route
           path="/login"
           element={
-            <RestrictedRoute redirectTo="/contacts" component={<Login />} />
+            <RestrictedRoute redirectTo="/" component={<Login />} />
           }
         />
         <Route
