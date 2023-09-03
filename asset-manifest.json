@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/goit-react-hw-08-phonebook/static/css/main.65081283.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.fa4cbd80.js",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.c7925e51.js",
     "static/js/233.34327b8d.chunk.js": "/goit-react-hw-08-phonebook/static/js/233.34327b8d.chunk.js",
     "static/css/465.8b9e028b.chunk.css": "/goit-react-hw-08-phonebook/static/css/465.8b9e028b.chunk.css",
     "static/js/465.558e939c.chunk.js": "/goit-react-hw-08-phonebook/static/js/465.558e939c.chunk.js",
@@ -24,7 +24,7 @@
     "static/media/Calendar.png": "/goit-react-hw-08-phonebook/static/media/Calendar.601a6e5b4ded62937f07.png",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
     "main.65081283.css.map": "/goit-react-hw-08-phonebook/static/css/main.65081283.css.map",
-    "main.fa4cbd80.js.map": "/goit-react-hw-08-phonebook/static/js/main.fa4cbd80.js.map",
+    "main.c7925e51.js.map": "/goit-react-hw-08-phonebook/static/js/main.c7925e51.js.map",
     "233.34327b8d.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/233.34327b8d.chunk.js.map",
     "465.8b9e028b.chunk.css.map": "/goit-react-hw-08-phonebook/static/css/465.8b9e028b.chunk.css.map",
     "465.558e939c.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/465.558e939c.chunk.js.map",
@@ -43,6 +43,6 @@
   },
   "entrypoints": [
     "static/css/main.65081283.css",
-    "static/js/main.fa4cbd80.js"
+    "static/js/main.c7925e51.js"
   ]
 }
