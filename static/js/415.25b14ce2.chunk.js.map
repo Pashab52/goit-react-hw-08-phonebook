@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/415.25b14ce2.chunk.js","mappings":"2JAYA,UAVY,WACV,OACE,gBAAKA,UAAU,WAAf,UACE,wBAAI,eAKT,C","sources":["pages/Home.jsx"],"sourcesContent":["\n\nconst Home =()=> {\n  return (\n    <div className=\"homeWrap\">\n      <h1>\n        Phonebook\n      </h1>\n    </div>\n  );\n}\n\nexport default Home;"],"names":["className"],"sourceRoot":""}
