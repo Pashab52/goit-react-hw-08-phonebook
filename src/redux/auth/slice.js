@@ -12,42 +12,53 @@ const initialState = {
 const authSlice = createSlice({
   name: 'auth',
   initialState,
-  extraReducers:  {
-    [register.rejected](state, action) {
-      state.error = action.payload;
-    },
-    [register.fulfilled](state, action) {
-      state.user = action.payload.user;
+  extraReducers: builder =>
+  {
+    builder
+      
+      .addCase(register.rejected, (state, action) => {
+         state.error = action.payload;
+      })
+    
+    .addCase(register.fulfilled, (state, action) => {
+        state.user = action.payload.user;
+        state.token = action.payload.token;
+        state.isLoggedIn = true;
+        state.error = null;
+    })
+      
+      .addCase(logIn.fulfilled, (state, action) => {
+        state.user = action.payload.user;
       state.token = action.payload.token;
       state.isLoggedIn = true;
       state.error = null;
-    },
-    [logIn.fulfilled](state, action) {
-      state.user = action.payload.user;
-      state.token = action.payload.token;
-      state.isLoggedIn = true;
-      state.error = null;
-    },
-    [logIn.rejected](state, action) {
-      state.error = action.payload;
-    },
-
-    [logOut.fulfilled](state) {
-      state.user = { name: null, email: null };
+      })
+   
+      .addCase(logIn.rejected, (state, action) => {
+        state.error = action.payload;
+      })
+   
+      .addCase(logOut.fulfilled, (state) => {
+        state.user = { name: null, email: null };
       state.token = null;
       state.isLoggedIn = false;
-    },
-    [refreshUser.pending](state) {
+      })
+  
+     .addCase(refreshUser.pending, (state) => {
       state.isRefreshing = true;
-    },
-    [refreshUser.fulfilled](state, action) {
+      })
+
+      .addCase(refreshUser.fulfilled, (state, action) => {
       state.user = action.payload;
       state.isLoggedIn = true;
       state.isRefreshing = false;
-    },
-    [refreshUser.rejected](state) {
-      state.isRefreshing = false;
-    },
+      })
+
+      .addCase(refreshUser.rejected, (state, action) => {
+        state.isRefreshing = false;
+        state.error = action.payload;
+      })
+
   },
 });
 
