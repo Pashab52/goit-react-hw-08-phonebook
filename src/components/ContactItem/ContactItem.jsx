@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import css from './ContactItem.module.css'
 import { useDispatch} from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations'; 
-import { BiUser, BiSolidPhone } from 'react-icons/bi';
+import { BiSolidPhone } from 'react-icons/bi';
 import { FaTimes, FaPen, FaUserAlt } from 'react-icons/fa';
 
 
