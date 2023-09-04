@@ -84,3 +84,7 @@ code {
   gap: 30px;
   align-items: baseline;
 }
+
+.homeLink:hover{
+transform: scale(1.08);
+}
