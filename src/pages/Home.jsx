@@ -50,7 +50,7 @@ const Home = () => {
             src={map}
             alt="map"
             width="90px"
-            height="100px"
+            height="105px"
           />
         </Link>
       </nav>
