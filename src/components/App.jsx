@@ -37,15 +37,11 @@ export function App() {
 
         <Route
           path="/register"
-          element={
-            <RestrictedRoute redirectTo="/" component={<Register />} />
-          }
+          element={<RestrictedRoute redirectTo="/" component={<Register />} />}
         />
         <Route
           path="/login"
-          element={
-            <RestrictedRoute redirectTo="/" component={<Login />} />
-          }
+          element={<RestrictedRoute redirectTo="/" component={<Login />} />}
         />
         <Route
           path="/contacts"
@@ -56,6 +52,20 @@ export function App() {
         <Route
           path="/tasks"
           element={<PrivateRoute redirectTo="/login" component={<Tasks />} />}
+        />
+
+        <Route
+          path="*"
+          element={
+            <div
+              style={{
+              textAlign:"center"
+              }}
+            >
+              <h2>404</h2>
+              <h2>Page not found!</h2>
+            </div>
+          }
         />
       </Route>
     </Routes>
